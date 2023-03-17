@@ -1,4 +1,4 @@
-module genericGoBox
+module github.com/3rooster/genericGoBox
 
 go 1.18
 
