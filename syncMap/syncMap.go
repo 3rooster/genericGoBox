@@ -35,3 +35,12 @@ func (m *Map[KT, VT]) Range(rangeFunc func(k KT, v VT) bool) {
 		return rangeFunc(key.(KT), value.(VT))
 	})
 }
+
+func (m *Map[KT, VT]) Count() int {
+	cnt := 0
+	m.store.Range(func(key, value any) bool {
+		cnt++
+		return true
+	})
+	return cnt
+}
